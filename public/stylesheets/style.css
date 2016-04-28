@@ -1,186 +1,68 @@
-body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    position: relative;
-    width: 100%;
+/* stylesheet for your custom graph */
+
+.categories {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
 }
 
-.outer-wrapper {
-    width: 100%;
+.categories-choropleth {
+  fill: #ccc;
 }
 
-.wrapper {
-    display: inline;
-    width: 1450px;
-    height: 700px;
-    margin: 2em;
+#tooltip-container {
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  border: 1px solid;
+  display: none;
 }
 
-
-.axis text {
-    font: 15px sans-serif;
+#canvas svg {
+  border: 0px;
 }
 
-.axis path,
-.axis line {
-    fill: none;
-    stroke: #000;
-    shape-rendering: crispEdges;
+.tooltip_key {
+  font-weight: bold;
 }
 
-.bar {
-    fill-opacity: .9;
+.tooltip_value {
+  margin-left: 20px;
+  float: right;
 }
 
-.x.axis path {
-    display: none;
+.x-axis {
+  fill: #000;
 }
 
-#orderByRank {
-    position: absolute;
-    top: 6%;
-    left: 34%;
-    font-size: medium;
+.chart {
+  background: #fff;
+  margin: 5px;
 }
 
-#showAll {
-    position: fixed;
-    top: 6%;
-    left: 30%;
-}
-.d3-tip {
-    line-height: 1;
-    font-weight: bold;
-    padding: 12px;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    border-radius: 2px;
+.chart .category-bar {
+  stroke: white;
+  fill: steelblue;
 }
 
-/* Creates a small triangle extender for the tooltip */
-.d3-tip:after {
-    box-sizing: border-box;
-    display: inline;
-    font-size: 10px;
-    width: 100%;
-    line-height: 1;
-    color: rgba(0, 0, 0, 0.8);
-    content: "\25BC";
-    position: absolute;
-    text-align: center;
+.chart text.name {
+  fill: #000;
 }
 
-/* Style northward tooltips differently */
-.d3-tip.n:after {
-    margin: -1px 0 0 0;
-    top: 100%;
-    left: 0;
+.chart line {
+  stroke: #c1c1c1;
 }
 
-.stroke {
-    fill: none;
-    stroke: #000;
-    stroke-width: 3px;
+.chart .rule {
+  fill: #000;
 }
 
-
-.graticule {
-    fill: none;
-    stroke: #777;
-    stroke-width: .5px;
-    stroke-opacity: .5;
+.main-category-text {
+  fill: #101eff;
 }
 
-.land {
-    fill: #222;
+.main-category-bar {
+  stroke: #08306b;
+  stroke-width: 2px;
 }
-
-.boundary {
-    fill: none;
-    stroke: #fff;
-    stroke-width: .5px;
-}
-
-.country {
-    fill: #ccc;
-    stroke: #fff;
-    stroke-width: .5px;
-    stroke-linejoin: round;
-}
-
-.hidden {
-    display: none;
-}
-
-text.yLifeExepectancy.labelDS, text.xIncome.labelDS, g.yLifeExepectancy.axis, g.xIncome.axis {
-    font: 10px sans-serif;
-}
-
-#draggableScatterplot > svg > g > g > g.tick > text {
-    font: 10px sans-serif;
-}
-
-.labelDS {
-    fill: #777;
-}
-
-.year.labelDS {
-    font: 500 19px "Helvetica Neue";
-    fill: #ddd;
-}
-
-.year.labelDS.active {
-    fill: #aaa;
-}
-
-.overlay {
-    fill: none;
-    pointer-events: all;
-    cursor: ew-resize;
-}
-
-#draggableScatterplot {
-    display: block;
-}
-
-#draggableScatterplot svg {
-    width: 100%;
-    height: 400px;
-    margin: 4em;
-}
-
-.dot {
-    stroke: #000;
-}
-
-#draggableScatterplot svg g text.xIncome.labelDS {
-    left: 300px;
-    bottom: 400px;
-}
-
-.inner {
-    position: absolute;
-}
-
-.outer-sortable {
-    overflow: auto;
-}
-
-.counties {
-    fill: none;
-}
-
-.states {
-    fill: none;
-    stroke: #fff;
-    stroke-linejoin: round;
-}
-
-.q0-9 { fill:rgb(247,251,255); }
-.q1-9 { fill:rgb(222,235,247); }
-.q2-9 { fill:rgb(198,219,239); }
-.q3-9 { fill:rgb(158,202,225); }
-.q4-9 { fill:rgb(107,174,214); }
-.q5-9 { fill:rgb(66,146,198); }
-.q6-9 { fill:rgb(33,113,181); }
-.q7-9 { fill:rgb(8,81,156); }
-.q8-9 { fill:rgb(8,48,107); }

@@ -1,37 +1,34 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
-        <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
-        <script type="text/javascript" src="//d3js.org/d3.geo.projection.v0.min.js"></script>
-        <script type="text/javascript" src="//d3js.org/queue.v1.min.js"></script>
-        <script type="text/javascript" src="//d3js.org/topojson.v1.min.js"></script>
-        <script type="text/javascript" src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-        <script type="text/javascript" src="javascripts/common.js"></script>
-    </head>
-    <body>
-        <div class="outer-wrapper">
-            <div class="wrapper outer-sortable">
-                <div class="inner">
-                    <h1>Ease of Doing Business Rank 2015</h1>
-                </div>
-                <div id="sortableBarChart" class="wrapper">
-                    <label id="orderByRank"><input id="rankInput" type="checkbox"> Order by Rank</label>
-                </div>
-            </div>
-            <div class="wrapper outer-sortable">
-                <div id="worldChoropleth" class="wrapper">
-                    <h1>Employment to Population Ratio 2013</h1>
-                </div>
-            </div>
-            <div class="inner">
-                <h1>Life Expectancy vs GDP per capita Since 1900</h1>
-            </div>
-            <div id="draggableScatterplot">
-            </div>
-        </div>
-        <script type="text/javascript" src="javascripts/sortableBarCharts.js"></script>
-        <script type="text/javascript" src="javascripts/worldChoropleth.js"></script>
-        <script type="text/javascript" src="javascripts/draggableScatterplot.js"></script>
-    </body>
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>US States Plain</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../dist/css/d3.geomap.css" rel="stylesheet">
+</head>
+<body>
+<div class="container" id="main">
+    <h1>US States  - Total Loan Issued Amount (from 2007-2015) Per State</h1>
+    <div id="map"></div>
+</div>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="http://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="//d3js.org/topojson.v1.min.js"></script>
+<script src="javascripts/d3.geomap.js"></script>
+<script>
+    var map = d3.geomap.choropleth()
+            .geofile('topojson/countries/USA.json')
+            .projection(d3.geo.albersUsa)
+            .column('2015')
+            .unitId('fips')
+            .scale(1000)
+            .legend(true);
+
+    d3.csv('data/us-state-loans.csv', function(error, data) {
+        d3.select("#map")
+                .datum(data)
+                .call(map.draw, map);
+    });
+</script>
+</body>
 </html>
