@@ -37,18 +37,18 @@ public class DataTransformer {
      *             then this argument value should be path\to\input. The pattern is based on increment starting from 1.
      */
     public static void main(String[] args) {
-        String outputFilePath = "C:\\Workspace\\CloudTechnology\\src\\main\\resources\\LendingF1.csv";
-        String mergedFilePath = "C:\\Workspace\\CloudTechnology\\src\\main\\resources\\loansM1.csv";
+        String outputFilePath = "C:\\Workspace\\DCUCloudTechologyAssignment3\\src\\main\\resources\\LendingF1.csv";
+        String mergedFilePath = "C:\\Workspace\\DCUCloudTechologyAssignment3\\src\\main\\resources\\loansM1.csv";
 
-        File[] files = new File[NUM_OF_FILES];
-        for (int i = 1; i <= NUM_OF_FILES; i++) {
-            files[i - 1] = new File("C:\\Workspace\\CloudTechnology\\src\\main\\resources\\old_data\\loans" + i + ".csv");
-        }
-        File mergedFile = new File(mergedFilePath);
-
-              mergeFiles(files, mergedFile);
+//        File[] files = new File[NUM_OF_FILES];
+//        for (int i = 1; i <= NUM_OF_FILES; i++) {
+//            files[i - 1] = new File("C:\\Workspace\\DCUCloudTechologyAssignment3\\src\\main\\resources\\old_data\\loans" + i + ".csv");
+//        }
+//        File mergedFile = new File(mergedFilePath);
+//
+//              mergeFiles(files, mergedFile);
         removeQuotes(mergedFilePath, outputFilePath);
-        writeFirst10Lines(outputFilePath, "C:\\Workspace\\CloudTechnology\\src\\main\\resources\\loans10.csv");
+        writeFirst10Lines(outputFilePath, "C:\\Workspace\\DCUCloudTechologyAssignment3\\src\\main\\resources\\loans10.csv");
     }
 
     public static void writeFirst10Lines(String inputFile, String outputFile) {

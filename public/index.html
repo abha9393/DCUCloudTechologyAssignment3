@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+        <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
+        <script type="text/javascript" src="//d3js.org/d3.geo.projection.v0.min.js"></script>
+        <script type="text/javascript" src="//d3js.org/queue.v1.min.js"></script>
+        <script type="text/javascript" src="//d3js.org/topojson.v1.min.js"></script>
+        <script type="text/javascript" src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+        <script type="text/javascript" src="javascripts/common.js"></script>
+    </head>
+    <body>
+        <div class="outer-wrapper">
+            <div class="wrapper outer-sortable">
+                <div class="inner">
+                    <h1>Ease of Doing Business Rank 2015</h1>
+                </div>
+                <div id="sortableBarChart" class="wrapper">
+                    <label id="orderByRank"><input id="rankInput" type="checkbox"> Order by Rank</label>
+                </div>
+            </div>
+            <div class="wrapper outer-sortable">
+                <div id="worldChoropleth" class="wrapper">
+                    <h1>Employment to Population Ratio 2013</h1>
+                </div>
+            </div>
+            <div class="inner">
+                <h1>Life Expectancy vs GDP per capita Since 1900</h1>
+            </div>
+            <div id="draggableScatterplot">
+            </div>
+        </div>
+        <script type="text/javascript" src="javascripts/sortableBarCharts.js"></script>
+        <script type="text/javascript" src="javascripts/worldChoropleth.js"></script>
+        <script type="text/javascript" src="javascripts/draggableScatterplot.js"></script>
+    </body>
+</html>
