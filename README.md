@@ -21,6 +21,11 @@ For preparing the data, the [DataTransformer](https://github.com/abha9393/DCUClo
 **AWS EMR cluster** has been created with a **hive** script
 ![Alt text](https://github.com/abha9393/DCUCloudTechologyAssignment3/blob/master/src/main/resources/Cluster.PNG)
 This script invokes HiveQL to get the requisite output which is stored in the output folder in AWS S3. It creates a loan table in Hive Datawarehouse on top of Hadoop and allows relational sql to be run on it such as grouping on all states to the sum total of all the amounts of loan. The [output](https://s3-eu-west-1.amazonaws.com/lending-data-15210445/output/query1/) is stored in tsv format. This also requires further processing to be used for the UI.
+![Alt text](https://github.com/abha9393/DCUCloudTechologyAssignment3/blob/master/src/main/resources/AWS%20S3.PNG)
+
+This is the D3 web UI look of the data. It shows the accumulated (summation) of the loans for that state for the given time frame. On hovering over a particular state, it shows the amount in tooltip.
+![Alt text](https://github.com/abha9393/DCUCloudTechologyAssignment3/blob/master/src/main/resources/Output.PNG)
+
 
 ##Related Work – any similar systems
  The UI output is shown using a choropleth map of US states. This is based on https://github.com/yaph/d3-geomap, which is a very commonly used library to create geomaps.
