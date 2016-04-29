@@ -17,14 +17,14 @@
 <script src="javascripts/d3.geomap.js"></script>
 <script>
     var map = d3.geomap.choropleth()
-            .geofile('https://s3-eu-west-1.amazonaws.com/lending-data-15210445/input/USA.json')
+            .geofile('https://s3-eu-west-1.amazonaws.com/lending-data-15210445/d3-data/USA.json')
             .projection(d3.geo.albersUsa)
             .column('2015')
             .unitId('fips')
             .scale(1000)
             .legend(true);
 
-    d3.csv('https://s3-eu-west-1.amazonaws.com/lending-data-15210445/input/us-state-loans.csv', function(error, data) {
+    d3.csv('https://s3-eu-west-1.amazonaws.com/lending-data-15210445/d3-data/us-state-loans.csv', function(error, data) {
         d3.select("#map")
                 .datum(data)
                 .call(map.draw, map);
